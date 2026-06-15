@@ -77,19 +77,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MC Maticha Events & Entertainment — Premium MC & Event Services" },
+      {
+        name: "description",
+        content:
+          "Professional MC services and complete event solutions for weddings, corporate events, funerals, birthdays and graduations. Bringing life to every celebration.",
+      },
+      { name: "author", content: "MC Maticha Events & Entertainment" },
+      { name: "theme-color", content: "#0B0B0B" },
+      { property: "og:title", content: "MC Maticha Events & Entertainment" },
+      {
+        property: "og:description",
+        content: "Bringing life to every celebration — premium MC and complete event services.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "MC Maticha Events & Entertainment" },
+      {
+        name: "twitter:description",
+        content: "Bringing life to every celebration — premium MC and complete event services.",
+      },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
   }),
