@@ -302,15 +302,7 @@ function CustomBuilder() {
                   </div>
                 </div>
 
-                <Link
-                  to="/contact"
-                  search={{
-                    type: eventType,
-                    guests,
-                    services: picks.join(","),
-                  } as unknown as never}
-                  className="btn-gold w-full text-sm hover:btn-gold-hover"
-                >
+                <Link to="/contact" className="btn-gold w-full text-sm hover:btn-gold-hover">
                   Request Custom Quotation
                 </Link>
               </div>
