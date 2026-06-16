@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -38,7 +38,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -100,8 +100,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Maticha Events Pro is a premium website for event creation and MC services." },
       { property: "og:description", content: "Maticha Events Pro is a premium website for event creation and MC services." },
       { name: "twitter:description", content: "Maticha Events Pro is a premium website for event creation and MC services." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f00054b1-11a4-4cb1-84e8-a94b2fa696cd/id-preview-1368a895--5e2888f2-bcb0-4b53-94a4-4f622a76b051.lovable.app-1781546927835.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f00054b1-11a4-4cb1-84e8-a94b2fa696cd/id-preview-1368a895--5e2888f2-bcb0-4b53-94a4-4f622a76b051.lovable.app-1781546927835.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f00054b1-11a4-4cb1-84e8-a94b2fa696cd/id-preview-1368a895.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f00054b1-11a4-4cb1-84e8-a94b2fa696cd/id-preview-1368a895.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

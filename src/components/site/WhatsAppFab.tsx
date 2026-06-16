@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export function WhatsAppFab() {
   return (
     <motion.a
-      href="https://wa.me/254700000000"
+      href="https://wa.me/0714058103"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0.6 }}

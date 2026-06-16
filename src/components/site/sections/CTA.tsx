@@ -33,14 +33,14 @@ export function CTA() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href="tel:+254700000000"
+                href="tel:0714058103"
                 className="btn-ghost text-sm sm:text-base hover:btn-ghost-hover"
               >
                 <Phone className="h-4 w-4" />
                 Call Us
               </a>
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/0714058103"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost text-sm sm:text-base hover:btn-ghost-hover"

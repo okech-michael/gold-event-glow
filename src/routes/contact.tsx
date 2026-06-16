@@ -95,8 +95,8 @@ function ContactPage() {
                 <ContactCard
                   icon={Phone}
                   title="Call us"
-                  value="+254 700 000 000"
-                  href="tel:+254700000000"
+                  value="0714058103"
+                  href="tel:0714058103"
                 />
               </Reveal>
               <Reveal delay={0.05}>
@@ -104,7 +104,7 @@ function ContactPage() {
                   icon={MessageCircle}
                   title="WhatsApp"
                   value="Chat in real time"
-                  href="https://wa.me/254700000000"
+                  href="https://wa.me/0714058103"
                 />
               </Reveal>
               <Reveal delay={0.1}>

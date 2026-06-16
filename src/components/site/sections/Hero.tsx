@@ -105,7 +105,7 @@ export function Hero() {
             Request a Quote
           </Link>
           <a
-            href="https://wa.me/254700000000"
+            href="https://wa.me/0714058103"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors link-shimmer"

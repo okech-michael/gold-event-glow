@@ -1,26 +1,27 @@
-type LovableErrorOptions = {
+type ErrorReportingOptions = {
   mechanism?: "manual" | "onerror" | "unhandledrejection" | "react_error_boundary";
   handled?: boolean;
   severity?: "error" | "warning" | "info";
 };
 
-type LovableEvents = {
+type ErrorReportingEvents = {
   captureException?: (
     error: unknown,
     context?: Record<string, unknown>,
-    options?: LovableErrorOptions,
+    options?: ErrorReportingOptions,
   ) => void;
 };
 
 declare global {
   interface Window {
-    __lovableEvents?: LovableEvents;
+    __errorEvents?: ErrorReportingEvents;
   }
 }
 
-export function reportLovableError(error: unknown, context: Record<string, unknown> = {}) {
+export function reportError(error: unknown, context: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
-  window.__lovableEvents?.captureException?.(
+  // Preferred: call any configured global handler, otherwise fallback to console.
+  window.__errorEvents?.captureException?.(
     error,
     {
       source: "react_error_boundary",
@@ -33,4 +34,7 @@ export function reportLovableError(error: unknown, context: Record<string, unkno
       severity: "error",
     },
   );
+  // Always log locally for developer visibility.
+  // eslint-disable-next-line no-console
+  console.error(error, context);
 }
