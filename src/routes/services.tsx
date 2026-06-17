@@ -37,6 +37,7 @@ const services = [
   {
     img: mcImg,
     title: "MC Services",
+    aspectClass: "aspect-[3/4]",
     desc: "Charismatic, professional hosting tailored to your event's tone — from formal corporate galas to vibrant weddings and dignified memorials.",
     features: [
       "Wedding MC",
@@ -51,6 +52,7 @@ const services = [
   {
     img: tentImg,
     title: "Tent & Equipment Hire",
+    aspectClass: "aspect-[4/3]",
     desc: "Stunning VIP tents, premium furniture and complete event infrastructure delivered, installed and styled.",
     features: ["VIP Tents", "Standard Tents", "Chairs & Tables", "Stage Setup", "Event Decor"],
   },
@@ -144,24 +146,26 @@ function ServiceRow({
   desc,
   features,
   reverse,
+  aspectClass,
 }: {
   img: string;
   title: string;
   desc: string;
   features: string[];
   reverse: boolean;
+  aspectClass?: string;
 }) {
   return (
     <div
       className={`grid gap-10 lg:gap-16 items-center lg:grid-cols-2 ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}
     >
       <Reveal direction={reverse ? "right" : "left"}>
-        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-elevated group">
+        <div className={`relative ${aspectClass ?? "aspect-[4/3]"} rounded-3xl overflow-hidden border border-border shadow-elevated group`}>
           <img
             src={img}
             alt={title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-contain bg-black/5 transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.08_0_0/0.5)] via-transparent to-transparent" />
         </div>
